@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>10-Bootstrapping</title>
+        <!-- 
+            do boot strapping
+            load sap.m library
+            add theme
+        -->
+        <script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-theme="sap_belize"
+        >
+        </script>
+        <script>
+/*         This is how to create a control using JS and place it at HTML div tag
+        var oControlName = new library.ControlName( "idOfControl" , {
+            property 1 : "value1",
+            property 2 : "value2"
+        }
+        ) ;
+        oControlName.placeAt("divIdInHTML");  */   
+        /*create input control*/
+        var oInput = new sap.m.Input("idName",{
+            width : "500px",
+            placeholder : "Please enter your name"
+        });
+        oInput.placeAt("divName");
+        /*create button control*/  
+        var oButton = new sap.m.Button("idClick",{
+            text : "Click Me",
+            icon : "sap-icon://hello-world",
+            press : function(){
+                /* get Name*/
+                var name = oInput.getValue();
+                alert("Hi "+name+",Welcome back to UI5!");
+            }
+        });
+        oButton.placeAt("divClick");      
+        </script>
+    </head>
+    <body>
+<!--         Just some cool stuff about the CSS    
+        https://openui5.hana.ondemand.com/resources/sap/ui/core/themes/sap_belize/library.css
+         -->
+        <h1>Welcome Back to UI5</h1>
+        <div id="divName"></div>
+        <div id="divClick"></div>
+    </body>
+</html>
