@@ -1,0 +1,12 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:form="sap.ui.layout.form"
+          controllerName="home.controller.main">
+    <form:SimpleForm id="idSimpleForm" editable="true">
+        <Label text="Login Name"></Label>
+        <Input id="idName" placeholder="login name here:" width="200px"></Input>
+        <Label text="Password"></Label>
+        <Input id="idPassword" type="Password" width="200px"></Input>
+        <Button id="idButton" text="ClickMe" press="sayHello" width="200px"></Button>  
+    </form:SimpleForm>     
+</mvc:View>
