@@ -1,0 +1,6 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          controllerName="home.controller.main">
+    <Input id="idName" placeholder="Please enter your name here:" width="500px"></Input>
+    <Button id="idButton" text="ClickMe" press="sayHello"></Button>       
+</mvc:View>
