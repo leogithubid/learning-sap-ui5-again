@@ -1,0 +1,18 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:form="sap.ui.layout.form"
+          controllerName="home.controller.main">
+    <form:SimpleForm id="simpleForm" editable="true">
+        <Label text="Employee Id"></Label>
+        <Input id="employeeId" width="200px" value="{/employeeStructure/employeeId}"></Input>
+        <Label text="Employee Name"></Label>
+        <!-- The below line is an example of Property Binding -->
+        <Input id="emplooyeeName" width="200px" value="{path:'/employeeStructure/employeeName'}"></Input>
+        <Label text="Salary"></Label>
+        <!-- The below line is an example of Expression Binding -->
+        <!-- <Input id="salary" width="200px" value="{=${/employeeStructure/employeeName}==='Beta'?1000000:0}"></Input> -->
+        <Input id="salary" width="200px"></Input>
+        <Label text="Currency"></Label>
+        <Input id="currency" width="200px" enabled="{= ${/employeeStructure/salary} > 10000 ? True : False }"></Input>
+    </form:SimpleForm>     
+</mvc:View>

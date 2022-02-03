@@ -1,0 +1,8 @@
+{
+    "employeeStructure" : {
+        "employeeId"        : 100,
+        "employeeName"      : "Alpha",
+        "salary"            : 1000,
+        "currency"          : "AUD"
+    }
+}
