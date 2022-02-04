@@ -5,7 +5,8 @@
           xmlns:form="sap.ui.layout.form"
           controllerName="home.controller.main">
     <form:SimpleForm id="simpleForm" editable="true">
-        <table:Table rows="{second>/empTab}" visibleRowCount="5" selectionMode="Single">
+        <table:Table rows="{/empTab}" visibleRowCount="5" selectionMode="Single">
+         <!-- <table:Table rows="{second>/empTab}" visibleRowCount="5" selectionMode="Single">           -->
             <table:columns>
             <table:Column>
                 <Label text="Employee Id"></Label>
@@ -16,7 +17,8 @@
             <table:Column>
                 <Label text="Employee Name"></Label>
                 <table:template>
-                    <Text text="{second>empName}"></Text>
+                    <Text text="{empName}"></Text>
+                    <!-- <Text text="{second>empName}"></Text> -->
                 </table:template>
             </table:Column>
             <table:Column>
