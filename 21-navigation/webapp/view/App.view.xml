@@ -1,0 +1,6 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m">
+            <Label text="Welcome to App View"></Label>
+            <!-- App.view.xml will have container control -->
+            <App id="appControl"></App>
+</mvc:View>
