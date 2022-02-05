@@ -80,6 +80,18 @@ sap.ui.define([
             var xmlModel = new sap.ui.model.xml.XMLModel();
             xmlModel.loadData("model/mockData3.xml");
             sap.ui.getCore().setModel(xmlModel);
+        },
+        showDetails:function(oEvent){
+            console.log(oEvent.getParameters());
+            console.log(oEvent.getParameter("rowContext").getPath());
+            //get the form id
+            this.getView().byId("simpleForm").bindElement(oEvent.getParameter("rowContext").getPath());
+        },
+        convertToUpperCase:function(inputValue){
+            //this is a formatter function
+            if(inputValue){
+                return inputValue.toUpperCase();
+            }
         }
     });
 });
