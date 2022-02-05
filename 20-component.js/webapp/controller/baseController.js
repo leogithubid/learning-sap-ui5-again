@@ -1,9 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "home/util/utility"
+    "sap/ui/demo/util/utility"//changed from home to sap.ui.demo
 ], function(oController,utilityJS) {
     'use strict';
-    return oController.extend("home.controller.base",{
+    return oController.extend("sap.ui.demo.controller.base",{
         formatter:utilityJS,//it is a propery
         //show details
         showDetails:function(oEvent){

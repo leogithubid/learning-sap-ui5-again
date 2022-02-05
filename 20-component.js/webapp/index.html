@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>19-Element-Binding-Formatter</title>
+        <title>20-Component.js</title>
         <!-- 
             do boot strapping
             load sap.m library
@@ -9,15 +9,24 @@
         -->
         <script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
                 data-sap-ui-libs="sap.m"
-                data-sap-ui-theme="sap_belize"
+                data-sap-ui-theme="sap_bluecrystal"
                 data-sap-ui-bindingSyntax="complex"
                 data-sap-ui-resourceRoots='{
-                    "home" : "./"
+                    "sap.ui.demo" : "./"
                 }'
         >
         </script>
         <script>
-/*         This is how to create a control using JS and place it at HTML div tag
+            /* Now we are building Fiori like Apps
+            They instantiate component container here and place it
+            at the content. The Launchpad will talk to the component container */
+
+            var oComponentContainer = new sap.ui.core.ComponentContainer("componentContainer",{
+                name : "sap.ui.demo" //just give the folder where we can find it
+            });
+            oComponentContainer.placeAt("divComponentContainer");
+
+/* /*         This is how to create a control using JS and place it at HTML div tag
         var oControlName = new library.ControlName( "idOfControl" , {
             property 1 : "value1",
             property 2 : "value2"
@@ -48,12 +57,12 @@
         });
         oView.placeAt("divView"); */
         //changed to XML View
-        var oView = new sap.ui.core.mvc.XMLView("idView",{
+/*         var oView = new sap.ui.core.mvc.XMLView("idView",{
             type : "XML",
             viewName : "home.view.main"
         });
-        oView.placeAt("divView");
-        </script>
+        oView.placeAt("divView"); */
+        </script> 
     </head>
     <body class="sapUiBody">
 <!--         Just some cool stuff about the CSS    
@@ -63,5 +72,6 @@
         <div id="divName"></div>
         <div id="divClick"></div>
         <div id="divView"></div>
+        <div id ="divComponentContainer"></div>
     </body>
 </html>

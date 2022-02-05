@@ -1,11 +1,11 @@
 sap.ui.define([
 "sap/ui/core/mvc/Controller",
-"home/model/model",
-"home/controller/baseController"
+"sap/ui/demo/model/model",//I had to change here from home to sap.ui.demo
+"sap/ui/demo/controller/baseController"//here also
 ], function(oController,ModelJS,oBase) {//here we have the conroller object
     'use strict';
     //now extend this standard controller object
-    return oBase.extend("home.controller.main",{
+    return oBase.extend("sap.ui.demo.controller.main",{
         onInit:function(){
             console.log("init");
             //console.log(formatter);
@@ -13,6 +13,7 @@ sap.ui.define([
             //var oModel = new sap.ui.model.json.JSONModel();
             //oModel.loadData("model/employeeData.json");
             var oModel = ModelJS.createJSONModel("model/employeeData.json");
+            console.log(oModel);
             sap.ui.getCore().setModel(oModel);
             var oModel2 = ModelJS.createJSONModel("model/employeeData2.json");
             sap.ui.getCore().setModel(oModel2,"second");
