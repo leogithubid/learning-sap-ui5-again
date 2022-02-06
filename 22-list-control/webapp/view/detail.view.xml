@@ -1,0 +1,9 @@
+<mvc:View id="detailView"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          controllerName="sap.ui.demo.controller.detail">
+          <Page>
+            <Text text="Second View"></Text>
+            <Button text="Back" press="goBack"></Button>
+          </Page>
+</mvc:View>
