@@ -1,0 +1,72 @@
+sap.ui.define([
+"sap/ui/core/mvc/Controller",
+"sap/ui/demo/model/model",//I had to change here from home to sap.ui.demo
+"sap/ui/demo/controller/baseController"//here also
+], function(oController,ModelJS,oBase) {//here we have the conroller object
+    'use strict';
+    //now extend this standard controller object
+    return oBase.extend("sap.ui.demo.controller.main",{
+        onInit:function(){
+            console.log("init");
+            //all model instantiation moved to manifest.json
+            //so we don't need modeljs anymore, even basecontroller is no
+            //longer needed
+        },
+        //Like how button has a press event, searchfield has a search event
+        //this method is linked to that
+        onSearch:function(oEvent){
+                //get user input
+                console.log(oEvent);
+                console.log(oEvent.getParameters());
+                var userInput = oEvent.getParameter("query");
+                console.log(userInput);
+                //get list object
+                var fruitsList = this.getView().byId("idList");
+                console.log(this.getView());
+                console.log(fruitsList);
+                //get binding
+                var itemsBinding = fruitsList.getBinding("items");
+                console.log(itemsBinding);
+                //create filter
+                var filter1 = new sap.ui.model.Filter("name",sap.ui.model.FilterOperator.Contains,userInput);
+                console.log(filter1);
+                var filter2 = new sap.ui.model.Filter("price",sap.ui.model.FilterOperator.EQ,userInput);
+                //attach filter to binding
+                //itemsBinding.filter([filter1,filter2]);
+                //this will not work as it looks for AND condition, so
+                var filter3 = new sap.ui.model.Filter({
+                    filters : [filter1,filter2],
+                    and : false
+                }
+                );
+                itemsBinding.filter(filter3);
+        },
+//added to the Next button
+        goNext:function(){
+            console.log(this.getView());//this will give us view one
+            console.log(this.getView().getParent());//this will go one level above to  app view
+            this.getView().getParent().to("detailView");//from app view navigate to view to
+        },
+        onBeforeRendering:function(){
+            console.log("before");
+        },
+        onAfterRendering:function(){
+        },
+        onExit:function(){
+            console.log("exit");
+        },
+        //press function we have to move here  
+        sayHello:function(oEvent){
+        },
+        //now attach sayHello to the button using another method 
+        //just to learn the attachEvent concept
+        attachHello:function(){
+        //note this line didn't work because it didn't get the Controller reference
+        //so we have to pass it - look at the main.view.js - button part
+        //sap.ui.getCore().byId("idClick").attachPress(sayHello());
+        },
+        flipModel:function(){
+            //get defaul model
+        }
+    });
+});

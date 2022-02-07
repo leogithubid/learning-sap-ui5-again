@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<data>
+    <empStr>
+        <empId>100</empId>
+        <empName>Alpha</empName>
+        <salary>1000</salary>
+        <currency>AUD</currency>
+        <smoker>false</smoker>
+        <maritalStatus>married</maritalStatus>
+        <rating>1</rating>
+    </empStr>
+    <empTab>
+        <row>
+            <empId>200</empId>
+            <empName>Beta</empName>
+            <salary>2000</salary>
+            <currency>USD</currency>
+            <smoker>true</smoker>
+            <maritalStatus>single</maritalStatus>
+            <rating>2</rating>
+        </row>
+        <row>
+            <empId>300</empId>
+            <empName>Gamma</empName>
+            <salary>3000</salary>
+            <currency>EUR</currency>
+            <smoker>false</smoker>
+            <maritalStatus>married</maritalStatus>
+            <rating>3</rating>
+        </row>
+    </empTab>
+</data>
