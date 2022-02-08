@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>24-Worklist-App</title>
+        <!-- 
+            do boot strapping
+            load sap.m library
+            add theme
+        -->
+        <script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-theme="sap_bluecrystal"
+                data-sap-ui-bindingSyntax="complex"
+                data-sap-ui-resourceRoots='{
+                    "sap.ui.demo" : "./"
+                }'
+        >
+        </script>
+        <script>
+            /* Now we are building Fiori like Apps
+            They instantiate component container here and place it
+            at the content. The Launchpad will talk to the component container */
+
+            var oComponentContainer = new sap.ui.core.ComponentContainer("componentContainer",{
+                name : "sap.ui.demo" //just give the folder where we can find it
+            });
+            oComponentContainer.placeAt("divComponentContainer");
+        </script> 
+    </head>
+    <body class="sapUiBody">
+        <h1>Welcome Back to UI5</h1>
+        <div id ="divComponentContainer"></div>
+    </body>
+</html>

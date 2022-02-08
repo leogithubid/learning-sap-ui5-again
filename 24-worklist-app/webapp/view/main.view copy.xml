@@ -1,0 +1,98 @@
+<mvc:View id="mainView"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:core="sap.ui.core"
+          xmlns:table="sap.ui.table"
+          xmlns:form="sap.ui.layout.form"
+          controllerName="sap.ui.demo.controller.main">
+        <Page>  
+        <Button text="Next" press="goNext"></Button>
+        <List>
+            <DisplayListItem label="hello"></DisplayListItem>
+            <StandardListItem icon="sap-icon://bell" title="bell"></StandardListItem>
+            <FeedListItem icon="sap-icon://bus-public-transport" text="Hello"></FeedListItem>
+            <InputListItem>
+                <Label text="Employee Id"></Label>
+                <Input width="200px" value="{empId}"></Input>
+            </InputListItem>
+        </List>
+        <table:Table rows="{/empTab}" 
+                     visibleRowCount="5" 
+                     rowSelectionChange="showDetails"
+                     selectionMode="Single">
+        <!-- <table:Table rows="{/empTab/row}" visibleRowCount="5" selectionMode="Single"> -->
+        <!-- The above line shows how to link xml model , we added /row-->
+        <table:toolbar>
+            <Toolbar>
+                <Button id="buttonFlip" press="flipModel" text="{i18n>XBUT_FLIPFLOP}"></Button>
+            </Toolbar>
+        </table:toolbar>
+         <!-- <table:Table rows="{second>/empTab}" visibleRowCount="5" selectionMode="Single">           -->
+            <table:columns>
+            <table:Column>
+                <Label text="{i18n>XLBL_EMPID}"></Label>
+                <table:template>
+                    <Text text="{empId}"></Text>
+                </table:template>
+            </table:Column>
+            <table:Column>
+                <Label text="{i18n>XLBL_EMPNAME}"></Label>
+                <table:template>
+                    <Text text="{path:'empName',
+                                 formatter:'.formatter.formatName'}"></Text>
+                    <!-- <Text text="{second>empName}"></Text> -->
+                </table:template>
+            </table:Column>
+            <table:Column>
+                <Label text="{i18n>XLBL_SALARY}"></Label>
+                <table:template>
+                    <Text text="{parts:[{path:'salary'}, {path:'currency'} ],
+                                 formatter:'.formatter.formatSalary'}"></Text>
+                </table:template>
+            </table:Column>
+<!--             <table:Column>
+                <Label text="Currency"></Label>
+                <table:template>
+                    <Text text="{currency}"></Text>
+                </table:template>
+            </table:Column> -->
+<!--             <table:Column>
+                <Label text="{i18n>XLBL_SMOKER}"></Label>
+                <table:template>
+                    <CheckBox selected="{smoker}"></CheckBox>
+                </table:template>
+            </table:Column> -->
+            <table:Column>
+                <Label text="{i18n>XLBL_MARITALSTATUS}"></Label>
+                <table:template>
+                    <Select selectedKey="{maritalStatus}">
+                        <items>
+                            <core:Item key="s" text="Single"></core:Item>
+                            <core:Item key="m" text="Married"></core:Item>
+                        </items>
+                    </Select>
+                </table:template>
+            </table:Column>
+            <table:Column>
+                <Label text="{i18n>XLBL_RATING}"></Label>
+                <table:template>
+                    <RatingIndicator value="{rating}"></RatingIndicator>
+                </table:template>
+            </table:Column>
+            </table:columns>
+        </table:Table>
+    <form:SimpleForm id="simpleForm" editable="true">
+        <Label text="Employee Id"></Label>
+        <Input id="employeeId" width="200px" value="{empId}"></Input>
+        <Label text="Employee Name"></Label>
+        <!-- The below line is an example of Property Binding -->
+        <Input id="emplooyeeName" width="200px" value="{path:'empName'}"></Input>
+        <Label text="Salary"></Label>
+        <!-- The below line is an example of Expression Binding -->
+        <!-- <Input id="salary" width="200px" value="{=${/employeeStructure/employeeName}==='Beta'?1000000:0}"></Input> -->
+        <Input id="salary" width="200px"></Input>
+        <Label text="Currency"></Label>
+        <Input id="currency" width="200px" enabled="{= ${/employeeStructure/salary} > 10000 ? True : False }"></Input>
+    </form:SimpleForm>  
+    </Page>   
+</mvc:View>
