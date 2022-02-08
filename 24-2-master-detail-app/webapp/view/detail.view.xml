@@ -5,7 +5,7 @@
           <Page id="detailPage" showNavButton="true"  navButtonPress="goBack" >
             <ObjectHeader id="objectHeader" title="{name}" number="{price}" icon="{image}">
             </ObjectHeader>
-            <Text text="Second View"></Text>
-            <Button text="Back" press="goBack"></Button>
+<!--             <Text text="Second View"></Text>
+            <Button text="Back" press="goBack"></Button> -->
           </Page>
 </mvc:View>

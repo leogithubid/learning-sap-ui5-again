@@ -33,7 +33,8 @@ sap.ui.define([
                 type     : "XMLView"
             });
             //add main view to the App container
-            appView.byId("appControl").addPage(mainView).addPage(detailView);
+            appView.byId("splitApp").addMasterPage(mainView).addDetailPage(detailView);
+            //appView.byId("appControl").addPage(mainView).addPage(detailView);
             //every function will have a return
             return appView;
         },

@@ -5,7 +5,7 @@
           xmlns:table="sap.ui.table"
           xmlns:form="sap.ui.layout.form"
           controllerName="sap.ui.demo.controller.main">
-    <Page>  
+    <Page id="mainPage">  
         <SearchField id="searchField" search="onSearch"></SearchField>
         <List id="idList" items="{/fruits}" itemPress="onItemPress">
               <!-- mode="Delete" delete="onDelete"> -->

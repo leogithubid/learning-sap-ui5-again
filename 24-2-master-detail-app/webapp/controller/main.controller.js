@@ -59,16 +59,41 @@ sap.ui.define([
         },
 //added to the Next button
         goNext:function(listItem){
-            console.log(this.getView());//this will give us view one
+            //get this view
+            console.log(this.getView());
+            //get its parent - ie, split app control
+            console.log(this.getView().getParent());
+            //get the detail view page
+            console.log(this.getView().getParent().getParent());
+            //get master page
+            console.log(this.getView().getParent().getParent().getMasterPage());
+            //get detail pages
+            console.log(this.getView().getParent().getParent().getDetailPages());
+            //get the detail page
+            console.log(this.getView().getParent().getParent().getDetailPages()[0]);
+            //get the next view
+            var detailView = this.getView().getParent().getParent().getDetailPages()[0];
+            //now get to the list control and object header
+            console.log(detailView.getContent());
+            console.log(detailView.getContent()[0]);
+            console.log(detailView.getContent()[0].getContent());
+            console.log(detailView.getContent()[0].getContent()[0]);
+            var objectHeader = detailView.getContent()[0].getContent()[0];
+            //bind the selection
+            objectHeader.bindElement(listItem.getBindingContextPath());
+
+
+
+/*             console.log(this.getView());//this will give us view one
             console.log(this.getView().getParent());//this will go one level above to  app view
             this.getView().getParent().to("detailView");//from app view navigate to view to
             //24-this is for binding for the next page
             //get the app control
             var oApp = this.getView().getParent();
             //get its pages
-            console.log(oApp.getPages());
+            console.log(oApp.getPages()); */
             //get main page
-            console.log(oApp.getPages()[0]);
+/*             console.log(oApp.getPages()[0]);
             //get detail page
             console.log(oApp.getPages()[1]);
             //now we have to do element binding to the selected item
@@ -86,7 +111,7 @@ sap.ui.define([
             //now we have to do element binding
             //what to bind it to ? we have listItem from that we have to derive
             console.log(listItem.getBindingContextPath());
-            objectHeader.bindElement(listItem.getBindingContextPath());
+            objectHeader.bindElement(listItem.getBindingContextPath()); */
         },
         onBeforeRendering:function(){
             console.log("before");
