@@ -1,0 +1,21 @@
+<mvc:View id="mainView"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:core="sap.ui.core"
+          xmlns:table="sap.ui.table"
+          xmlns:form="sap.ui.layout.form"
+          controllerName="sap.ui.demo.controller.main">
+    <Page id="mainPage">  
+        <SearchField id="searchField" search="onSearch"></SearchField>
+        <List id="idList" items="{/fruits}" itemPress="onItemPress">
+              <!-- mode="Delete" delete="onDelete"> -->
+              <!-- mode="SingleSelect"> -->
+            <items>
+                <ObjectListItem icon="{image}" number="{price}" title="{name}"
+                                type="Navigation">
+                </ObjectListItem>
+            </items>
+        </List>
+        <Button text="Next" press="goNext"></Button>
+    </Page>   
+</mvc:View>
