@@ -1,0 +1,11 @@
+<mvc:View id="detailView"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          controllerName="sap.ui.demo.controller.detail">
+          <Page id="detailPage" showNavButton="true"  navButtonPress="goBack" >
+            <ObjectHeader id="objectHeader" title="{name}" number="{price}" icon="{image}">
+            </ObjectHeader>
+<!--             <Text text="Second View"></Text>
+            <Button text="Back" press="goBack"></Button> -->
+          </Page>
+</mvc:View>

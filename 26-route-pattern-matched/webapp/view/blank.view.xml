@@ -1,0 +1,5 @@
+<mvc:XMLView xmlns:mvc="sap.ui.core.mvc" 
+             xmlns="sap.m">
+    <Page  title="Welcome to UI5" >
+    </Page>
+</mvc:XMLView>
